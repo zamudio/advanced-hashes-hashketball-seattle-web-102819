@@ -239,7 +239,7 @@ end
 
 def long_name_steals_a_ton?
   points_scored = 0
-  player_name = nil
+  steal_player_name = nil
   game_hash.each do |team, stats|
     stats[:players].each do |player|
       if player[:steals] > points_scored
@@ -248,5 +248,19 @@ def long_name_steals_a_ton?
       end
     end
   end
+  
+  player_name = nil
+  name_length = 0
+  game_hash.each do |team, stats|
+    stats[:players].each do |player|
+      if player[:player_name].is_a? String
+        if player[:player_name].length > name_length
+          name_length = player[:player_name].length
+          player_name = player[:player_name]
+        end
+      end
+    end
+  end
+  player_name
   if player_name == 
 end
