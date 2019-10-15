@@ -242,11 +242,11 @@ def long_name_steals_a_ton?
   player_name = nil
   game_hash.each do |team, stats|
     stats[:players].each do |player|
-      if player[:points] > points_scored
-        points_scored = player[:points]
+      if player[:steals] > points_scored
+        points_scored = player[:steals]
         player_name = player[:player_name]
       end
     end
   end
-  if player_name
+  if player_name == 
 end
