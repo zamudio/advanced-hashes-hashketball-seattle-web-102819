@@ -221,7 +221,7 @@ def winning_team
   team_point_totals.max_by{|key,val| val}.first
 end
 
-def player_with_most_of(statistic)
+def player_with_longest_name
   player_name = nil
   i = 0
 
@@ -236,10 +236,6 @@ def player_with_most_of(statistic)
     end
   end
   player_name
-end
-
-def player_with_longest_name
-  player_with_most_of(:player_name)
 end
 
 
