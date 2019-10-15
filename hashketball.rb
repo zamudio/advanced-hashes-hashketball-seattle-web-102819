@@ -230,6 +230,7 @@ def player_with_longest_name
         if player[:player_name].length > i
           i = player[player_name].length
           player_name = player[:player_name]
+        end
       end
     end
   end
