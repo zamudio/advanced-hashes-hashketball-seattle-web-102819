@@ -222,13 +222,14 @@ def winning_team
 end
 
 def player_with_longest_name
-  i = 0
   player_name = nil
+  i = 0
   game_hash.each do |team, stats|
     stats[:players].each do |player|
-      if player[:player_name].max_by{|key,val| val} > i.max_by{|key,val| val}
-        i = player[:player_name]
-        player_name = player[:player_name]
+      if player[:player_name].is_a? String
+        if player[:player_name].length > i
+          i = player[player_name].length
+          player_name = player[:player_name]
       end
     end
   end
